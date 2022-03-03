@@ -1,0 +1,403 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Pixel;
+    src: url(./img/ARCADECLASSIC.TTF);
+}
+
+body {
+    display: block;
+    font-family: 'Pixel';
+}
+
+.slider {
+    position: fixed;
+    background-image: url(./img/giphy.webp);
+    width: 100%;
+    height: 94%;   
+    background-size: cover;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    background-color: #000;
+    height: 6%;
+    bottom: 0;
+    z-index: 300;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.nav-item {
+    position: relative;  
+    transition: 2s; 
+}
+.nav-item.active {
+    transition: 2s;
+}
+.nav-item a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 40px;
+    margin: 0 6px;    
+}
+
+.nav-list .line {
+    position: absolute;
+    width: 0;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    border-radius: 6px;
+    background-color: #93deff;
+    transition: all 2s ease;
+}
+
+.background-1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    opacity: 1;
+    transition: 2s;
+}
+
+.background-1.none-bg {
+    position: absolute;
+    left: -100%;
+    opacity: 0.5;
+    transition: 2s;
+}
+
+.background-1.none-bg-top {
+    position: absolute;
+    top: -100%;
+    opacity: 0.5;
+    transition: 2s;
+}
+
+
+.info-area {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    margin: 0 390px;
+    top: 100px;
+    color: #fff;  
+    width: 500px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 7px;
+    background-color: #5f68fe;
+    opacity: 0.8;
+}
+
+.info-area.play-song {
+    opacity: 1 ;
+}
+
+.info-area::before {
+    content: "";
+    position: absolute;
+    background-image: conic-gradient(
+        #04b0ee 20deg,
+        pink 120deg
+    );
+    height: 30%;
+    top: 30%;
+    left: -25%;
+    right: -25%;
+    animation: rotate 1.5s infinite linear;
+}
+@keyframes rotate {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.info-area::after {
+    content: "";
+    position: absolute;
+    background-image: url(./img/giphy1.webp);
+    border-radius: 7px;
+    width: 96%;
+    height: 96%;
+    right: 2%;
+    top: 2%;
+}
+
+.background-1 h1 {
+    position: absolute;
+    color: #fff;
+    width: 280px;
+    top: 200px;
+    left: 120px;
+}
+
+.background-1 h4 {
+    position: absolute;
+    color: #fff;
+    width: 240px;
+    top: 260px;
+    left: 120px;  
+}
+
+.btn-play {
+    position: absolute;
+    left: 542px;
+    top: 502px;
+    background-color: transparent;
+    color: #ccc;
+    border: 2px solid #ccc;
+    padding: 3px 6px;
+    border-radius: 4px;
+}
+
+.btn-play.play {
+    color: #5f68fe ;
+    border-color: #5f68fe;
+}
+
+.background-2 {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    background-image: url(./img/bg-2.webp);
+    background-size: contain;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.5;
+    transition: 2s;
+}
+
+.background-2.open-bg {
+    right: 0;
+    opacity: 1;
+    transition: 2s;
+}
+
+
+.content-bg-2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 500px;
+    height: 95vh;
+    overflow-y: scroll;
+}
+
+.content-row {
+    display: flex;
+    width: 100%;
+    height: 25%;
+}
+
+.content-right {    
+    width: 50%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.content-right h1 {
+    color: #fff;
+    font-size: 140px;
+    height: 100%;
+}
+
+.content-right h2 {
+    color: #fff;
+    background-color: #000;
+    font-size: 80px;
+    height: 100%;
+}
+
+.bg-rocket {
+    background: url(./img/rocketwebp.webp) fixed center;
+}
+
+
+.content-left {
+    color: #fff;
+    width: 50%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.content-left h1 {
+    color: #fff;
+    font-size: 80px;
+    background-color: #000;
+    height: 100%;
+}
+
+.content-left h2 {
+    color: #fff;
+    font-size: 140px;
+    padding: 0 20px;
+}
+
+
+::-webkit-scrollbar {
+    width: 0;
+}
+.circle-btn-left {
+    position: absolute;
+    top: 190px;
+    left: -105px;
+    width: 200px;
+    height: 200px;
+    border: 6px #ccc solid;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-3 {
+    position: fixed;
+    display: flex;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.5;
+    transition: 2s;
+}
+
+.background-3.open-bg {
+    left: 0;
+    opacity: 1;
+    transition: 2s;
+}
+
+.background-3.none-bg {
+    position: absolute;
+    left: -200%;
+    opacity: 0.5;
+    transition: 2s;
+}
+
+.bg-3-content-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    width: 50%;
+    height: 100%;
+    background-color: #000;
+    overflow-y:scroll;
+}
+
+header h1 {
+    font-size: 80px;
+    text-align: center;
+    line-height: 100px;
+}
+
+.header-box span {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    animation: moveToRight linear 2s infinite;
+}
+
+@keyframes moveToRight {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    25% {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+
+    50% {
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+
+    75% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.header-box span:nth-child(1) {
+    background-color: red;
+    animation-delay: 0.6s;
+}
+
+.header-box span:nth-child(2) {
+    background-color: blue;
+    animation-delay: 0.2s;
+}
+
+.header-box span:nth-child(3) {
+    background-color: green;
+}
+
+.my-blog {
+    width: 100%;
+    background-color: #fff;
+    margin: 10px 0;
+}
+
+.my-blog p {
+    font-size: 20px;
+    color: #000;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.bg-3-content-right {
+    background-image: url(./img/bg-3.gif);
+    background-size: cover;
+    height: 100%;
+    width: 50%;
+} 
+
+.circle-btn-right {
+    position: absolute;
+    top: 190px;
+    right: -105px;
+    width: 200px;
+    height: 200px;
+    border: 6px #ccc solid;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-bg-3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-bg-3 img {
+    margin: 10px;
+    width: 46%;
+    border-radius: 10px;
+}
